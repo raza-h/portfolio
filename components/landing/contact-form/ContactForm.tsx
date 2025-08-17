@@ -40,6 +40,7 @@ const ContactForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm<IFormInput>({
     defaultValues: {
       name: "",
@@ -57,6 +58,9 @@ const ContactForm = () => {
         title: response?.message,
         type: response?.success ? "success" : "error",
       });
+      if (response?.success) {
+        reset();
+      }
     } catch (err: unknown) {
       if (err instanceof Error) {
         toaster.create({
