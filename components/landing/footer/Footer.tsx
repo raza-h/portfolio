@@ -31,10 +31,10 @@ const Footer = () => {
               height={80}
             />
           </Link>
-          <VStack>
-            <Text fontFamily={fonts.title} fontWeight={600} fontSize={19}>
+          <VStack align={"start"}>
+            <Heading as={'h5'} fontFamily={fonts.title} fontWeight={600} fontSize={22}>
               Raza Haider
-            </Text>
+            </Heading>
             <Text as="small" fontFamily={fonts.title}>
               Software Engineer
             </Text>
@@ -42,7 +42,7 @@ const Footer = () => {
         </HStack>
         <HStack gap={24} align={"start"} marginTop={[10, 10, 10, 0]} flexDir={["column", "column", "row"]}>
           <VStack align={"start"}>
-            <Heading as={"h6"}>Links</Heading>
+            <Heading as={"h6"} fontFamily={fonts.title}>Links</Heading>
             <Link href={"#"}>Home</Link>
             <Link href={"#about"}>About</Link>
             <Link href={"#services"}>Services</Link>
@@ -50,7 +50,7 @@ const Footer = () => {
             <Link href={"#contact"}>Contact</Link>
           </VStack>
           <VStack align={"start"}>
-            <Heading as={"h6"} textWrap={'nowrap'}>Get in touch</Heading>
+            <Heading as={"h6"} textWrap={'nowrap'} fontFamily={fonts.title}>Get in touch</Heading>
             <NextLink
               target="_blank"
               href={"https://www.linkedin.com/in/razah1214"}
