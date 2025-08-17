@@ -1,0 +1,50 @@
+@media only screen and (min-width: 1024px) {
+  .container-3d {
+    perspective: 1000px;
+  }
+
+  .card-3d {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .card-3d:hover {
+    transform: perspective(1000px) rotateY(-15deg) rotateX(-5deg);
+  }
+}
+
+.scroll-to-bottom {
+  width: 25px;
+  height: 40px;
+  border: 2px solid var(--main);
+  border-radius: 60px;
+  position: relative;
+  cursor: pointer;
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--main);
+    border-radius: 50%;
+    opacity: 1;
+    animation: wheel-down 2s infinite;
+    -webkit-animation: wheel-down 2s infinite;
+  }
+}
+
+@keyframes wheel-down {
+  to {
+    opacity: 0;
+    top: 20px;
+  }
+}
+
+@-webkit-keyframes wheel-down {
+  to {
+    opacity: 0;
+    top: 20px;
+  }
+}
