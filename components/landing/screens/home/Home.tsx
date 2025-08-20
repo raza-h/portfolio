@@ -71,7 +71,7 @@ const Home = () => {
           </Text>
         </VStack>
         <figure className="container-3d">
-          <VStack align={"center"}>
+          <VStack align={"center"} position={"relative"}>
             <Image
               width={700}
               height={467}
@@ -80,6 +80,7 @@ const Home = () => {
               className="card-3d"
               id={"hero-image"}
               priority
+              sizes="(max-width: 768px) 100vw, 700px"
             />
           </VStack>
         </figure>

@@ -88,13 +88,15 @@ const About = () => {
               "none",
               "rgba(78, 245, 231, 0.4) 5px 5px, rgba(78, 245, 231, 0.3) 10px 10px, rgba(78, 245, 231, 0.2) 15px 15px, rgba(78, 245, 231, 0.1) 20px 20px, rgba(78, 245, 231, 0.05) 25px 25px",
             ]}
+            position={'relative'}
           >
             <Image
               alt={"Raza Haider Profile Picture"}
               src={"/images/profile-pic.png"}
               width={600}
-              height={600}
+              height={650}
               loading={"lazy"}
+              sizes="(max-width: 768px) 80vw, 600px"
             />
           </VStack>
         </VStack>
