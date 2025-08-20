@@ -7,6 +7,7 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { useInViewFadeIn } from "@/hooks";
 import fonts from "@/constants/fonts";
+import { repeat } from "@/utils";
 
 const ServiceCard: FC<{
   id: string | number;
@@ -34,7 +35,7 @@ const ServiceCard: FC<{
 
   return (
     <GridItem
-      height={[80, 80, 80, 64, 80]}
+      height={[...repeat(3, 80), 64, 80]}
       bg={"brand.card"}
       rounded={"lg"}
       cursor={isDragging ? "grabbing" : "move"}
@@ -43,7 +44,7 @@ const ServiceCard: FC<{
       flexDir={"column"}
       justifyContent={"space-between"}
       alignItems={"center"}
-      padding={[10, 10, 10, 5, 10]}
+      padding={[...repeat(3, 10), 5, 10]}
       border={"1px"}
       borderColor={"brand.border"}
       gap={2}
@@ -78,13 +79,24 @@ const ServiceCard: FC<{
         </VStack>
       )}
       <VStack>
-        <Heading color={"brand.main"} fontSize={20} width={"100%"} as={"h4"} fontFamily={fonts.title}>
+        <Heading
+          color={"brand.main"}
+          fontSize={20}
+          width={"100%"}
+          as={"h4"}
+          fontFamily={fonts.title}
+        >
           {title.split(" ")[0]}{" "}
           <span style={{ color: "#FFFFFF" }}>
             {title.slice(title.split(" ")[0].length, title.length)}
           </span>
         </Heading>
-        <Text color={"brand.light"} fontWeight={300} fontSize={[15, 12]} textAlign={'left'}>
+        <Text
+          color={"brand.light"}
+          fontWeight={300}
+          fontSize={[15, 12]}
+          textAlign={"left"}
+        >
           {description}
         </Text>
       </VStack>

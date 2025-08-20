@@ -11,7 +11,9 @@ export default function Layout({
     <>
       <Header />
       <Toaster />
-      {children}
+      <main>
+        {children}
+      </main>
       <Footer />
     </>
   );

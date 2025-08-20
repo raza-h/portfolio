@@ -1,15 +1,13 @@
-import { About, Contact, Home, Projects, Services } from "@/components/landing/screens";
+import { INTERNAL_LINKS } from "@/constants/landing";
 
 const Landing = async () => {
-  return (
-    <main>
-      <Home />
-      <About />
-      <Services />
-      <Projects />
-      <Contact />
-    </main>
-  );
+  return INTERNAL_LINKS?.map((Link) => {
+    return (
+      <section id={Link?.id} key={Link?.id}>
+        <Link.Component key={Link?.name} />
+      </section>
+    );
+  });
 };
 
 export default Landing;

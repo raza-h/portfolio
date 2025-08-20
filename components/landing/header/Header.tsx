@@ -5,6 +5,8 @@ import { HStack, Image, Text } from "@chakra-ui/react";
 import fonts from "@/constants/fonts";
 import { Link } from "@/components/common/link";
 import { useHashUpdate } from "@/hooks";
+import { INTERNAL_LINKS } from "@/constants/landing";
+import { repeat } from "@/utils";
 
 const Header = () => {
   const [left, setLeft] = useState("-100%");
@@ -17,40 +19,49 @@ const Header = () => {
   useEffect(() => {
     let lastScrollY = 0;
 
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         setShowHeader(false);
       } else if (currentScrollY < lastScrollY) {
         setShowHeader(true);
       }
+
       lastScrollY = currentScrollY;
     };
 
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+      if (window.innerWidth < 1024) {
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        window.removeEventListener("wheel", handleScroll);
+      } else {
+        window.removeEventListener("scroll", handleScroll);
+        window.addEventListener("wheel", handleScroll, { passive: true });
+      }
+    };
 
-    setWidth(window.innerWidth);
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("wheel", handleScroll);
     };
   }, []);
 
   useEffect(() => {
     if (left[0] !== "-" && width < 1024) {
-      document.body.style.overflowY = "hidden";
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflowY = "auto";
+      document.body.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflowY = "auto";
+      document.body.style.overflow = "auto";
     };
   }, [left, width]);
 
@@ -73,7 +84,7 @@ const Header = () => {
     >
       <HStack
         w={"100%"}
-        paddingY={[5, 5, 5, 8]}
+        paddingY={[...repeat(3, 5), 8]}
         justifyContent={"space-between"}
         alignItems={"center"}
         paddingX={[4, 8, 16, 20]}
@@ -91,20 +102,20 @@ const Header = () => {
 
         <nav>
           <HStack
-            bg={["#060514C1", "#060514C1", "#060514C1", "transparent"]}
-            fontSize={[16, 16, 16, 14]}
-            position={["absolute", "absolute", "absolute", "static"]}
-            flexDir={["column", "column", "column", "row"]}
-            width={["100%", "100%", "100%", "fit-content"]}
+            bg={[...repeat(3, "#060514C1"), "transparent"]}
+            fontSize={[...repeat(3, 16), 14]}
+            position={[...repeat(3, "absolute"), "static"]}
+            flexDir={[...repeat(3, "column"), "row"]}
+            width={[...repeat(3, "100%"), "fit-content"]}
             left={left}
             transition={"left 200ms linear"}
             top={0}
-            h={["100vh", "100vh", "100vh", "fit-content"]}
+            h={[...repeat(3, "100vh"), "fit-content"]}
             justifyContent={"center"}
             color={"brand.light"}
             zIndex={100}
-            spaceX={[0, 0, 0, 10]}
-            spaceY={[10, 10, 10, 0]}
+            spaceX={[...repeat(3, 0), 10]}
+            spaceY={[...repeat(3, 10), 0]}
             fontFamily={fonts.title}
             fontWeight={500}
           >
@@ -115,74 +126,33 @@ const Header = () => {
               top={4}
               right={4}
               onClick={toggleSidebar}
-              display={["block", "block", "block", "none"]}
+              display={[...repeat(3, "block"), "none"]}
               cursor={"pointer"}
               alt={"Close Button"}
             />
-            <Link
-              color={!hash || hash === "#" ? "brand.main" : ""}
-              cursor={"pointer"}
-              _hover={{
-                textDecor: "none",
-                color: "brand.main",
-              }}
-              _active={{
-                outline: "none !important",
-              }}
-              href={"#"}
-            >
-              <Text onClick={toggleSidebar}>Home</Text>
-            </Link>
-            <Link
-              cursor={"pointer"}
-              color={hash === "#about" ? "brand.main" : ""}
-              _hover={{
-                textDecor: "none",
-                color: "brand.main",
-              }}
-              href={"#about"}
-            >
-              <Text onClick={toggleSidebar}>About</Text>
-            </Link>
-            <Link
-              cursor={"pointer"}
-              color={hash === "#services" ? "brand.main" : ""}
-              _hover={{
-                textDecor: "none",
-                color: "brand.main",
-              }}
-              href={"#services"}
-            >
-              <Text onClick={toggleSidebar}>Services</Text>
-            </Link>
-            <Link
-              cursor={"pointer"}
-              color={hash === "#projects" ? "brand.main" : ""}
-              _hover={{
-                textDecor: "none",
-                color: "brand.main",
-              }}
-              href={"#projects"}
-            >
-              <Text onClick={toggleSidebar}>Projects</Text>
-            </Link>
-            <Link
-              cursor={"pointer"}
-              _hover={{
-                textDecor: "none",
-                color: "brand.main",
-              }}
-              href={"#contact"}
-              color={hash === "#contact" ? "brand.main" : ""}
-            >
-              <Text onClick={toggleSidebar}>Contact</Text>
-            </Link>
+            {INTERNAL_LINKS?.map((link) => (
+              <Link
+                key={link?.hrefs?.[0]}
+                color={link?.hrefs?.includes(hash) ? "brand.main" : ""}
+                cursor={"pointer"}
+                _hover={{
+                  textDecor: "none",
+                  color: "brand.main",
+                }}
+                _active={{
+                  outline: "none !important",
+                }}
+                href={link?.hrefs?.[0]}
+              >
+                <Text onClick={toggleSidebar}>{link?.name}</Text>
+              </Link>
+            ))}
           </HStack>
           <Image
             alt={"Hamburger Menu"}
             src={"/icons/menu.svg"}
             w={10}
-            display={["block", "block", "block", "none"]}
+            display={[...repeat(3, "block"), "none"]}
             onClick={toggleSidebar}
             cursor={"pointer"}
           />

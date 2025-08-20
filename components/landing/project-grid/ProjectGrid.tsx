@@ -1,11 +1,13 @@
 "use client";
 import fonts from "@/constants/fonts";
 import { useInViewFadeIn } from "@/hooks";
-import { Button, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
 import "./index.css";
+import { repeat } from "@/utils";
+import { LandingButton } from "../landing-button";
 
 const ProjectGrid: FC<{
   project: {
@@ -18,27 +20,29 @@ const ProjectGrid: FC<{
   index: number;
   isLast: boolean;
 }> = ({ project, index = -1, isLast = false }) => {
-  const { ref: imageRef, props: imageProps } = useInViewFadeIn({
+  const fadeInOptions = {
     transition: "opacity 0.7s ease-out",
-  });
-  const { ref: descriptionRef, props: descriptionProps } = useInViewFadeIn({
-    transition: "opacity 0.7s ease-out",
-  });
-  const { ref: comingSoonRef, props: comingSoonProps } = useInViewFadeIn({
-    transition: "opacity 0.7s ease-out",
-  });
+  };
+
+  const { ref: imageRef, props: imageProps } = useInViewFadeIn(fadeInOptions);
+
+  const { ref: descriptionRef, props: descriptionProps } =
+    useInViewFadeIn(fadeInOptions);
+
+  const { ref: comingSoonRef, props: comingSoonProps } =
+    useInViewFadeIn(fadeInOptions);
 
   return (
     <>
       <Grid
-        templateColumns={["auto", "auto", "auto", "auto auto auto auto auto"]}
+        templateColumns={[...repeat(3, "auto"), "repeat(5, auto)"]}
         width={"100%"}
         gapY={20}
-        gapX={[0, 0, 0, 40]}
+        gapX={[...repeat(3, 0), 40]}
       >
         <VStack
           h={[250, 330, 490, 300, 500]}
-          gridColumn={["span 1", "span 1", "span 1", "span 3"]}
+          gridColumn={[...repeat(3, "span 1"), "span 3"]}
           overflow={"hidden"}
           rounded={"xl"}
           scrollbar={"hidden"}
@@ -57,10 +61,10 @@ const ProjectGrid: FC<{
           justify={"end"}
           width={"100%"}
           gap={8}
-          gridColumn={["span 1", "span 1", "span 1", "span 2"]}
+          gridColumn={[...repeat(3, "span 1"), "span 2"]}
           {...(index % 2 === 0
             ? {
-                gridRowStart: [undefined, undefined, undefined, "1"],
+                gridRowStart: [...repeat(3, undefined), "1"],
               }
             : {})}
           {...descriptionProps}
@@ -82,29 +86,22 @@ const ProjectGrid: FC<{
           <HStack w={"100%"} justify={"start"}>
             {project?.link && (
               <Link href={project?.link} target="_blank">
-                <Button
-                  bg={"brand.main"}
-                  color={'brand.bg'}
-                  border={"1.5px solid"}
-                  fontWeight={600}
-                  fontFamily={fonts.title}
-                  fontSize={14}
-                  borderColor={"transparent"}
-                  _hover={{ bg: "brand.bg", borderColor: "brand.main", color: "brand.main" }}
-                >
-                  View Live
-                </Button>
+                <LandingButton>View Project</LandingButton>
               </Link>
             )}
           </HStack>
         </VStack>
       </Grid>
       {isLast && (
-        <VStack marginTop={[10, 10, 10, 20]} ref={comingSoonRef} {...comingSoonProps}>
+        <VStack
+          marginTop={[...repeat(3, 10), 20]}
+          ref={comingSoonRef}
+          {...comingSoonProps}
+        >
           <Text
             color={"brand.main"}
             fontFamily={fonts.large}
-            fontSize={"3xl"}
+            fontSize={[...repeat(3, "xl"), "3xl"]}
             className={comingSoonProps?.opacity === 1 ? "blink" : ""}
           >
             More Coming Soon...

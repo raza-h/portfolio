@@ -5,128 +5,107 @@ import { Typewriter } from "@/components/common/typewriter";
 import Image from "next/image";
 import "./index.css";
 import { Link } from "@/components/common/link";
+import { repeat } from "@/utils";
+import { SERVICES, SOCIAL_LINKS } from "@/constants/generic";
 
 const Home = () => {
   return (
-    <section id={"home"}>
-      <VStack
-        background={"brand.bg"}
-        minH={"89vh"}
-        justify={[
+    <VStack
+      background={"brand.bg"}
+      minH={"89vh"}
+      justify={["space-around", "space-around", "space-around", "space-evenly"]}
+      pos={"relative"}
+    >
+      <HStack
+        w={"100%"}
+        justifyContent={[
+          "space-between",
+          "space-between",
+          "space-between",
           "space-around",
-          "space-around",
-          "space-around",
-          "space-evenly",
         ]}
-        pos={"relative"}
+        flexDir={["column-reverse", "column-reverse", "column-reverse", "row"]}
+        paddingX={[4, 8, 16, 20]}
+        paddingY={[0, 0, 0, 12]}
       >
-        <HStack
-          w={"100%"}
-          justifyContent={[
-            "space-between",
-            "space-between",
-            "space-between",
-            "space-around",
-          ]}
-          flexDir={[
-            "column-reverse",
-            "column-reverse",
-            "column-reverse",
-            "row",
-          ]}
-          paddingX={[4, 8, 16, 20]}
-          paddingY={[0, 0, 0, 12]}
-        >
-          <VStack alignItems={"flex-start"} paddingY={[10, 10, 10, 0]}>
-            <Heading
-              color={"brand.main"}
-              fontFamily={fonts.title}
-              fontSize={[35, 35, 40, 50]}
-              textAlign={"left"}
-              as={"h1"}
-            >
-              RAZA&nbsp;
-              <Text color={"white"} as={"span"}>
-                HAIDER
-              </Text>
-            </Heading>
-            <Text
-              marginTop={[2, 2, 5, 5]}
-              fontSize={20}
-              fontWeight={500}
-              width={["100%", "100%", "100%", "100%"]}
-              fontFamily={fonts.title}
-              as={"h2"}
-            >
-              Software Engineer
+        <VStack alignItems={"flex-start"} paddingY={[...repeat(3, 10), 0]}>
+          <Heading
+            all={"unset"}
+            color={"brand.main"}
+            fontFamily={fonts.title}
+            fontSize={[...repeat(2, 35), 40, 50]}
+            textAlign={"left"}
+            fontWeight={600}
+            as={"h1"}
+          >
+            RAZA&nbsp;
+            <Text color={"white"} as={"span"}>
+              HAIDER
             </Text>
-            <HStack>
-              <Link href="https://www.linkedin.com/in/razah1214/" target="_blank">
+          </Heading>
+          <Text
+            marginTop={[...repeat(2, 2), ...repeat(2, 5)]}
+            fontSize={20}
+            fontWeight={500}
+            width={"100%"}
+            fontFamily={fonts.title}
+            as={"h2"}
+          >
+            Software Engineer
+          </Text>
+          <HStack>
+            {SOCIAL_LINKS?.map((link) => (
+              <Link key={link?.href} href={link?.href} target="_blank">
                 <Image
-                  src={"/icons/linkedin.svg"}
+                  src={link?.imagePath}
                   width={32}
                   height={32}
-                  alt={"Raza Haider Linkedin"}
+                  alt={`Raza Haider ${link?.name}`}
                 />
               </Link>
-              <Link href="https://github.com/raza-h" target="_blank">
-                <Image
-                  src={"/icons/github.svg"}
-                  width={32}
-                  height={32}
-                  alt={"Raza Haider GitHub"}
-                />
-              </Link>
-            </HStack>
-            <Text fontSize={16} fontFamily={fonts.title} marginTop={10}>
-              Building modern, scalable applications with a focus on performance
-              and user experience.
-            </Text>
+            ))}
+          </HStack>
+          <Text fontSize={16} fontFamily={fonts.title} marginTop={10}>
+            Building modern, scalable applications with a focus on performance
+            and user experience.
+          </Text>
+        </VStack>
+        <figure className="container-3d">
+          <VStack align={"center"}>
+            <Image
+              width={700}
+              height={467}
+              alt={"Hero Section Image - Raza Haider"}
+              src={"/images/hero.png"}
+              className="card-3d"
+              id={"hero-image"}
+              priority
+            />
           </VStack>
-          <figure className="container-3d">
-            <VStack align={"center"}>
-              <Image
-                width={700}
-                height={467}
-                alt={"Hero Section Image - Raza Haider"}
-                src={"/images/hero.png"}
-                className="card-3d"
-                id={"hero-image"}
-                priority
-              />
-            </VStack>
-          </figure>
-        </HStack>
-        <Text
-          fontWeight={800}
-          fontFamily={fonts.large}
-          color={"brand.main"}
-          fontSize={[30, 30, 35, 40]}
-        >
-          <Typewriter
-            words={[
-              "Web\xa0\xa0Applications",
-              "Stripe\xa0\xa0Integrations",
-              "AI\xa0\xa0Integrations",
-              "Landing\xa0\xa0Pages",
-              "APIs",
-              "AWS\xa0\xa0Deployments",
-            ]}
-            loop={0}
-            typeSpeed={120}
-            delaySpeed={200}
-          />
-        </Text>
-        <Link
-          href="#about"
-          position={["static", "static", "static", "absolute"]}
-          left={"95%"}
-          aria-label="Scroll to About Section"
-        >
-          <figure className="scroll-to-bottom" />
-        </Link>
-      </VStack>
-    </section>
+        </figure>
+      </HStack>
+      <Text
+        fontWeight={800}
+        fontFamily={fonts.large}
+        color={"brand.main"}
+        fontSize={[...repeat(2, 30), 35, 40]}
+      >
+        <Typewriter
+          words={SERVICES?.map((service) => service?.title?.split(" ")?.join('\xa0\xa0'))}
+          loop={0}
+          typeSpeed={120}
+          delaySpeed={200}
+        />
+      </Text>
+      <Link
+        href="#about"
+        position={[...repeat(3, "static"), "absolute"]}
+        left={"95%"}
+        aria-label="Scroll to About Section"
+      >
+        <figure className="scroll-to-bottom" />
+      </Link>
+    </VStack>
   );
 };
 
