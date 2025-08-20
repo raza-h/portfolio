@@ -3,19 +3,16 @@
 import { sendEmail } from "@/app/(landing)/actions";
 import { toaster } from "@/components/common/toaster/Toaster";
 import fonts from "@/constants/fonts";
-import {
-  Button,
-  Heading,
-  Input,
-  Text,
-  Textarea,
-  VStack,
-} from "@chakra-ui/react";
+import { Heading, VStack } from "@chakra-ui/react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as yup from "yup";
-import './index.css';
+import "./index.css";
+import { repeat } from "@/utils";
+import { LandingButton } from "../landing-button";
+import { Input } from "@/components/common/input";
+import { TextArea } from "@/components/common/text-area";
 
 interface IFormInput {
   name: string;
@@ -40,7 +37,7 @@ const ContactForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm<IFormInput>({
     defaultValues: {
       name: "",
@@ -50,6 +47,7 @@ const ContactForm = () => {
     },
     resolver: yupResolver(schema),
   });
+
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     setLoading(true);
     try {
@@ -74,113 +72,46 @@ const ContactForm = () => {
 
   return (
     <VStack
-      w={["100%", "100%", "100%", "70%", "50%"]}
+      w={[...repeat(3, "100%"), "70%", "50%"]}
       rounded={"md"}
       bg={"brand.card"}
       padding={5}
       className="pulsed"
     >
-      <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
+      <form onSubmit={handleSubmit(onSubmit)} className="form">
         <Heading as={"h4"} fontFamily={fonts.title} marginBottom={5}>
           Send a message
         </Heading>
         <VStack>
-          <VStack align={"start"} width={"100%"}>
-            <label htmlFor="name" style={{ fontFamily: fonts.title }}>
-              Name
-            </label>
-            <Input
-              {...register("name")}
-              placeholder="John Doe"
-              borderColor={"brand.light"}
-              border={"1px solid"}
-              _focus={{
-                outlineColor: "brand.main",
-                borderColor: "brand.main",
-              }}
-            />
-            <Text color={"red.300"} as={"small"}>
-              {errors?.name?.message}
-            </Text>
-          </VStack>
-          <VStack align={"start"} width={"100%"}>
-            <label htmlFor="email" style={{ fontFamily: fonts.title }}>
-              Email
-            </label>
-            <Input
-              {...register("email")}
-              placeholder="john@example.com"
-              type="email"
-              borderColor={"brand.light"}
-              border={"1px solid"}
-              _focus={{
-                outlineColor: "brand.main",
-                borderColor: "brand.main",
-              }}
-            />
-            <Text color={"red.300"} as={"small"}>
-              {errors?.email?.message}
-            </Text>
-          </VStack>
-          <VStack align={"start"} width={"100%"}>
-            <label htmlFor="subject" style={{ fontFamily: fonts.title }}>
-              Subject
-            </label>
-
-            <Input
-              {...register("subject")}
-              borderColor={"brand.light"}
-              placeholder="Enter Subject"
-              border={"1px solid"}
-              _focus={{
-                outlineColor: "brand.main",
-                borderColor: "brand.main",
-              }}
-            />
-            <Text color={"red.300"} as={"small"}>
-              {errors?.subject?.message}
-            </Text>
-          </VStack>
-          <VStack align={"start"} width={"100%"}>
-            <label htmlFor="message" style={{ fontFamily: fonts.title }}>
-              Message
-            </label>
-            <Textarea
-              {...register("message")}
-              borderColor={"brand.light"}
-              placeholder="Enter Message"
-              border={"1px solid"}
-              _focus={{
-                outlineColor: "brand.main",
-                borderColor: "brand.main",
-              }}
-              rows={5}
-              draggable={false}
-              resize={"none"}
-            />
-            <Text color={"red.300"} as={"small"}>
-              {errors?.message?.message ?? "\xa0"}
-            </Text>
-          </VStack>
-          <Button
-            type="submit"
-            w={"100%"}
-            bg={"brand.main"}
-            color={"brand.bg"}
-            border={"1.5px solid"}
-            fontWeight={600}
-            fontFamily={fonts.title}
-            fontSize={14}
-            borderColor={"transparent"}
-            _hover={{
-              bg: "brand.bg",
-              borderColor: "brand.main",
-              color: "brand.main",
-            }}
-            loading={loading}
-          >
+          <Input
+            {...register("name")}
+            placeholder="John Doe"
+            label={"Name"}
+            errorMsg={errors?.name?.message}
+          />
+          <Input
+            {...register("email")}
+            placeholder="john@example.com"
+            label={"Email"}
+            errorMsg={errors?.email?.message}
+            type={"email"}
+          />
+          <Input
+            {...register("subject")}
+            placeholder="Enter Subject"
+            label={"Subject"}
+            errorMsg={errors?.subject?.message}
+          />
+          <TextArea
+            {...register("message")}
+            placeholder="Enter Message"
+            label={"Message"}
+            errorMsg={errors?.subject?.message}
+            rows={5}
+          />
+          <LandingButton type="submit" w={"100%"} loading={loading}>
             Submit
-          </Button>
+          </LandingButton>
         </VStack>
       </form>
     </VStack>

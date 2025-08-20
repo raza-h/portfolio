@@ -1,4 +1,4 @@
-export const services = [
+export const SERVICES = [
   {
     id: 1,
     icon: {
@@ -79,7 +79,7 @@ export const services = [
   },
 ];
 
-export const projects = [
+export const PROJECTS = [
   {
     id: 1,
     title: "OLX Seller Center",
@@ -90,9 +90,35 @@ export const projects = [
   },
   {
     id: 2,
-    title: 'IQTest.ai',
-    description: 'AI-powered web application for online IQ testing that deliver instant results for casual cognitive assessment.',
-    link: 'https://iq-test.ai',
-    imagePath: '/images/iq-test-ai-portfolio.png',
-  }
+    title: "IQTest.ai",
+    description:
+      "AI-powered web application for online IQ testing that deliver instant results for casual cognitive assessment.",
+    link: "https://iq-test.ai",
+    imagePath: "/images/iq-test-ai-portfolio.png",
+  },
+];
+
+export const SOCIAL_LINKS = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/razah1214",
+    imagePath: "/icons/linkedin.svg",
+    identifier: "razah1214",
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/raza-h",
+    imagePath: "/icons/github.svg",
+    identifier: "raza-h",
+  },
+];
+
+export const CONTACT_LINKS = [
+  ...SOCIAL_LINKS,
+  {
+    name: "Email",
+    href: "mailto:razah12145@gmail",
+    imagePath: "/icons/email.svg",
+    identifier: "razah12145@gmail.com",
+  },
 ];
