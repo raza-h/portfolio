@@ -1,17 +1,3 @@
-@media only screen and (min-width: 1024px) {
-  .container-3d {
-    perspective: 1000px;
-  }
-
-  .card-3d {
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .card-3d:hover {
-    transform: perspective(1000px) rotateY(-15deg) rotateX(-5deg);
-  }
-}
-
 .scroll-to-bottom {
   width: 25px;
   height: 40px;

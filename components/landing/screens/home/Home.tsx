@@ -70,14 +70,13 @@ const Home = () => {
             and user experience.
           </Text>
         </VStack>
-        <figure className="container-3d">
+        <figure>
           <VStack align={"center"} position={"relative"}>
             <Image
               width={700}
               height={467}
               alt={"Hero Section Image - Raza Haider"}
               src={"/images/hero.png"}
-              className="card-3d"
               id={"hero-image"}
               priority
               sizes="(max-width: 768px) 100vw, 700px"
