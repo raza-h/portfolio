@@ -7,6 +7,7 @@ import { Link } from "@/components/common/link";
 import { useHashUpdate } from "@/hooks";
 import { INTERNAL_LINKS } from "@/constants/landing";
 import { repeat } from "@/utils";
+import { useHeaderVisibility } from "./hooks";
 
 const Header = () => {
   const [left, setLeft] = useState("-100%");
@@ -15,43 +16,7 @@ const Header = () => {
   const [showHeader, setShowHeader] = useState(true);
 
   useHashUpdate("section", setHash);
-
-  useEffect(() => {
-    let lastScrollY = 0;
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setShowHeader(false);
-      } else if (currentScrollY < lastScrollY) {
-        setShowHeader(true);
-      }
-
-      lastScrollY = currentScrollY;
-    };
-
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-      if (window.innerWidth < 1024) {
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        window.removeEventListener("wheel", handleScroll);
-      } else {
-        window.removeEventListener("scroll", handleScroll);
-        window.addEventListener("wheel", handleScroll, { passive: true });
-      }
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("wheel", handleScroll);
-    };
-  }, []);
+  useHeaderVisibility(setShowHeader, setWidth);
 
   useEffect(() => {
     if (left[0] !== "-" && width < 1024) {
