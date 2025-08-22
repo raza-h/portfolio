@@ -101,7 +101,9 @@ const Header = () => {
                 color={link?.hrefs?.includes(hash) ? "brand.main" : ""}
                 cursor={"pointer"}
                 onClick={() => {
-                  setShowHeader(false);
+                  if (link?.hrefs?.[0] !== '#') {
+                    setShowHeader(false);
+                  }
                 }}
                 _hover={{
                   textDecor: "none",
