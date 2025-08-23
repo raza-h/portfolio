@@ -12,6 +12,8 @@ const Home = () => {
       minH={"89vh"}
       justify={[...repeat(3, "space-around"), "space-evenly"]}
       pos={"relative"}
+      paddingBottom={[...repeat(3, 5), 0]}
+      gap={[...repeat(3, 5), 0]}
     >
       <HStack
         w={"100%"}
