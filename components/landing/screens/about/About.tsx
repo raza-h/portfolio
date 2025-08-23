@@ -1,10 +1,11 @@
 import fonts from "@/constants/fonts";
-import { CREDIBILITY_LINKS } from "@/constants/landing";
+import { CREDIBILITY_LINKS, TECH_STACK } from "@/constants/landing";
 import { repeat } from "@/utils";
 import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { TechList } from "@/components/common/tech-list";
 
 const About = () => {
   return (
@@ -73,6 +74,7 @@ const About = () => {
             , graduating with a 3.64 CGPA and multiple Dean&apos;s Honor List
             awards. I build fast, scalable, and maintainable web applications.
           </Text>
+          <TechList list={TECH_STACK} />
         </VStack>
         <VStack justifyContent={"center"} position={"relative"} w={"40%"}>
           <VStack

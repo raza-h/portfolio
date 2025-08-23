@@ -68,3 +68,18 @@ export const CREDIBILITY_LINKS = [
     imagePath: "/images/fast-logo.png",
   },
 ];
+
+export const TECH_STACK = [
+  "React",
+  "Next",
+  "Node",
+  "Ant Design",
+  "Material UI",
+  "Tailwind CSS",
+  "Firebase",
+  "Supabase",
+  "OpenAI",
+  "Stripe",
+  "Docker",
+  "Sentry",
+];

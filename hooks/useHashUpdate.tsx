@@ -33,7 +33,7 @@ export default function useHashUpdate(
       }
     };
 
-    const scrollEvent = debounce(onScroll, 150);
+    const scrollEvent = debounce(onScroll, 10);
     window.addEventListener("scroll", scrollEvent);
 
     return () => window.removeEventListener("scroll", scrollEvent);

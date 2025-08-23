@@ -87,6 +87,7 @@ export const PROJECTS = [
       "Dedicated web application for sellers to manage stores, listings, inventory, orders, and fulfillment on OLX.",
     link: "https://sellercenter.olx.com.pk",
     imagePath: "/images/olx-seller-center-portfolio.png",
+    tech: ["React", "Ant Design", "Firebase", "Docker", "Sentry"],
   },
   {
     id: 2,
@@ -95,6 +96,7 @@ export const PROJECTS = [
       "AI-powered web application for online IQ testing that deliver instant results for casual cognitive assessment.",
     link: "https://iq-test.ai",
     imagePath: "/images/iq-test-ai-portfolio.png",
+    tech: ["React", "Chakra UI", "Node", "Express", "Supabase", "OpenAI", "Stripe"],
   },
 ];
 
@@ -122,3 +124,103 @@ export const CONTACT_LINKS = [
     identifier: "razah12145@gmail.com",
   },
 ];
+
+export const TECH_CHIP: {
+  [key: string]: { name: string; logo: string; color: string };
+} = {
+  React: {
+    name: "React",
+    logo: "https://img.shields.io/badge/-React-61dafb?style=for-the-badge&logo=react&logoColor=61dafb&labelColor=282828",
+    color: "#61dafb",
+  },
+  Next: {
+    name: "Next.js",
+    logo: "https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=ffffff&labelColor=282828",
+    color: "#000000",
+  },
+  Node: {
+    name: "Node.js",
+    logo: "https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=339933&labelColor=282828",
+    color: "#339933",
+  },
+  Express: {
+    name: "Express.js",
+    logo: "https://img.shields.io/badge/-Express.js-000000?style=for-the-badge&logo=express&logoColor=ffffff&labelColor=282828",
+    color: "#000000",
+  },
+  OpenAI: {
+    name: "OpenAI",
+    logo: "https://img.shields.io/badge/-OpenAI-00b3b3?style=for-the-badge&logo=openai&logoColor=00b3b3&labelColor=282828",
+    color: "#00b3b3",
+  },
+  Sentry: {
+    name: "Sentry",
+    logo: "https://img.shields.io/badge/-Sentry-ff9800?style=for-the-badge&logo=sentry&logoColor=ff9800&labelColor=282828",
+    color: "#ff9800",
+  },
+  Stripe: {
+    name: "Stripe",
+    logo: "https://img.shields.io/badge/-Stripe-008cdd?style=for-the-badge&logo=stripe&logoColor=008cdd&labelColor=282828",
+    color: "#008cdd",
+  },
+  AWS: {
+    name: "Amazon Web Services",
+    logo: "https://img.shields.io/badge/-AWS-ff9900?style=for-the-badge&logo=aws&logoColor=ff9900&labelColor=282828",
+    color: "#ff9900",
+  },
+  Docker: {
+    name: "Docker",
+    logo: "https://img.shields.io/badge/-Docker-0db7ed?style=for-the-badge&logo=docker&logoColor=0db7ed&labelColor=282828",
+    color: "#0db7ed",
+  },
+  HTML: {
+    name: "HTML",
+    logo: "https://img.shields.io/badge/-HTML-c58545?style=for-the-badge&logo=html5&logoColor=c58545&labelColor=282828",
+    color: "#c58545",
+  },
+  CSS: {
+    name: "CSS",
+    logo: "https://img.shields.io/badge/-CSS-d1a01f?style=for-the-badge&logo=css&logoColor=d1a01f&labelColor=282828",
+    color: "#d1a01f",
+  },
+  JavaScript: {
+    name: "JavaScript",
+    logo: "https://img.shields.io/badge/-JavaScript-f7df1e?style=for-the-badge&logo=javascript&logoColor=f7df1e&labelColor=282828",
+    color: "#f7df1e",
+  },
+  Python: {
+    name: "Python",
+    logo: "https://img.shields.io/badge/-Python-98b982?style=for-the-badge&logo=python&logoColor=98b982&labelColor=282828",
+    color: "#98b982",
+  },
+  "Ant Design": {
+    name: "Ant Design",
+    logo: "https://img.shields.io/badge/-Ant%20Design-1890ff?style=for-the-badge&logo=antdesign&logoColor=1890ff&labelColor=282828",
+    color: "#1890ff",
+  },
+  "Chakra UI": {
+    name: "Chakra UI",
+    logo: "https://img.shields.io/badge/-Chakra%20UI-319795?style=for-the-badge&logo=chakraui&logoColor=319795&labelColor=282828",
+    color: "#319795",
+  },
+  "Material UI": {
+    name: "Material UI",
+    logo: "https://img.shields.io/badge/-Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=ffffff&labelColor=282828",
+    color: "#319795",
+  },
+  "Tailwind CSS": {
+    name: "Tailwind CSS",
+    logo: "https://img.shields.io/badge/-Tailwind%20CSS-38b2ac?style=for-the-badge&logo=tailwindcss&logoColor=38b2ac&labelColor=282828",
+    color: "#319795",
+  },
+  Firebase: {
+    name: "Firebase",
+    logo: "https://img.shields.io/badge/-Firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=ffca28&labelColor=282828",
+    color: "#ffca28",
+  },
+  Supabase: {
+    name: "Supabase",
+    logo: "https://img.shields.io/badge/-Supabase-3ecf8e?style=for-the-badge&logo=supabase&logoColor=3ecf8e&labelColor=282828",
+    color: "#3ecf8e",
+  },
+};

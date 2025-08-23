@@ -8,6 +8,7 @@ import React, { FC } from "react";
 import "./index.css";
 import { repeat } from "@/utils";
 import { LandingButton } from "../landing-button";
+import { TechList } from "@/components/common/tech-list";
 
 const ProjectGrid: FC<{
   project: {
@@ -16,6 +17,7 @@ const ProjectGrid: FC<{
     description?: string;
     imagePath: string;
     link?: string;
+    tech: string[];
   };
   index: number;
   isLast: boolean;
@@ -83,6 +85,7 @@ const ProjectGrid: FC<{
             </Heading>
             <Text fontFamily={fonts.body}>{project?.description ?? ""}</Text>
           </VStack>
+          <TechList list={project?.tech} />
           <HStack w={"100%"} justify={"start"}>
             {project?.link && (
               <Link href={project?.link} target="_blank">
