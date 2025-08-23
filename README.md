@@ -19,23 +19,23 @@ Raza Haider's software engineering portfolio.
 
 ## Overview
 
-A clean and modern portfolio built with Next.js to showcase Raza Haider’s frontend development skills and projects—a reflection of creativity, performance, and design. ([GitHub][1])
+A clean and modern portfolio built with Next.js to showcase Raza Haider’s frontend development skills and projects—a reflection of creativity, performance, and design.
 
 ---
 
 ## Demo
 
-Live preview: [razahaider-three.vercel.app](https://razahaider-three.vercel.app) ([GitHub][1])
+Live preview: [razahaider-three.vercel.app](https://razahaider-three.vercel.app)
 
 ---
 
 ## Tech Stack
 
-* **Framework**: Next.js (bootstrapped via create-next-app) ([GitHub][1])
-* **Language**: TypeScript (\~92%) ([GitHub][1])
+* **Framework**: Next.js (bootstrapped via create-next-app)
+* **Language**: TypeScript (\~92%)
 * **Styling**: CSS
-* **Font Optimization**: `next/font` ([GitHub][1])
-* **Containerization**: Docker (Dockerfile present) ([GitHub][1])
+* **Font Optimization**: `next/font`
+* **Containerization**: Docker (Dockerfile present)
 
 ---
 
@@ -62,7 +62,7 @@ Live preview: [razahaider-three.vercel.app](https://razahaider-three.vercel.app)
 
 4. **Open** [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-5. **Start editing** `app/page.tsx` to see your changes live. Hot-reloading is enabled. ([GitHub][1])
+5. **Start editing** `app/page.tsx` to see your changes live. Hot-reloading is enabled.
 
 ---
 
@@ -121,7 +121,7 @@ Live preview: [razahaider-three.vercel.app](https://razahaider-three.vercel.app)
 
 ## Deployment
 
-* The project is deployable on Vercel, which powers the live demo. ([GitHub][1])
+* The project is deployable on Vercel, which powers the live demo.
 * To deploy manually on Vercel:
 
   1. Connect your GitHub repository in Vercel dashboard.
@@ -138,7 +138,7 @@ Thank you for your interest! I currently have no open issues or pull requests, b
 
 ## License
 
-This project is licensed under the **MIT License**. ([GitHub][1])
+This project is licensed under the **MIT License**.
 
 ---
 
