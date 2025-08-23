@@ -1,19 +1,13 @@
-import { Toaster } from "@/components/common/toaster";
-import { Footer } from "@/components/landing/footer";
-import { Header } from "@/components/landing/header";
+import { Toaster } from "@/components";
+import { ProviderProps } from "@/types";
+import { Header, Footer } from "@/views/landing/components";
 
-export default function Layout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function LandingLayout({ children }: Readonly<ProviderProps>) {
   return (
     <>
       <Header />
       <Toaster />
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer />
     </>
   );

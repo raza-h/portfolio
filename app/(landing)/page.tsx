@@ -1,13 +1,7 @@
-import { INTERNAL_LINKS } from "@/constants/landing";
+import { Landing } from "@/views/landing";
 
-const Landing = async () => {
-  return INTERNAL_LINKS?.map((Link) => {
-    return (
-      <section id={Link?.id} key={Link?.id}>
-        <Link.Component key={Link?.name} />
-      </section>
-    );
-  });
+const LandingPage = async () => {
+  return <Landing />
 };
 
-export default Landing;
+export default LandingPage;

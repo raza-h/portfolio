@@ -7,7 +7,7 @@ import {
   Roboto,
 } from "next/font/google";
 import "./globals.css";
-import { Provider } from "@/components/common/provider";
+import { Provider } from "@/components";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",

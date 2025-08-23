@@ -1,4 +1,4 @@
-const fonts = {
+const FONTS = {
     title: 'Montserrat',
     heading: 'Inter',
     body: 'Roboto',
@@ -6,4 +6,4 @@ const fonts = {
     large: 'Monoton'
 }
 
-export default fonts;
+export default FONTS;
