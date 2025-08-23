@@ -73,12 +73,12 @@ const Header = () => {
             {INTERNAL_LINKS?.map((link) => (
               <Link
                 key={link?.hrefs?.[0]}
-                color={link?.hrefs?.includes(hash) ? "brand.main" : ""}
+                color={link?.hrefs?.includes(hash) ? "brand.primary" : ""}
                 cursor={"pointer"}
                 onClick={link?.hrefs?.[0] !== "#" ? toggleSidebar : () => {}}
                 _hover={{
                   textDecor: "none",
-                  color: "brand.main",
+                  color: "brand.primary",
                 }}
                 _active={{
                   outline: "none !important",
