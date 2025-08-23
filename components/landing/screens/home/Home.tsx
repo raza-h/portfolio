@@ -28,7 +28,11 @@ const Home = () => {
         paddingX={[4, 8, 16, 20]}
         paddingY={[0, 0, 0, 12]}
       >
-        <VStack alignItems={"flex-start"} paddingY={[...repeat(3, 10), 0]}>
+        <VStack
+          alignItems={"flex-start"}
+          paddingY={[...repeat(3, 10), 0]}
+          w={"100%"}
+        >
           <Heading
             all={"unset"}
             color={"brand.main"}
@@ -70,7 +74,7 @@ const Home = () => {
             and user experience.
           </Text>
         </VStack>
-        <figure>
+        <figure className="w-full">
           <VStack align={"center"} position={"relative"}>
             <Image
               width={700}
@@ -91,7 +95,9 @@ const Home = () => {
         fontSize={[...repeat(2, 30), 35, 40]}
       >
         <Typewriter
-          words={SERVICES?.map((service) => service?.title?.split(" ")?.join('\xa0\xa0'))}
+          words={SERVICES?.map((service) =>
+            service?.title?.split(" ")?.join("\xa0\xa0")
+          )}
           loop={0}
           typeSpeed={120}
           delaySpeed={200}
