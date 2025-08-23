@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
+
+Raza Haider's software engineering portfolio.
+
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Demo](#demo)
+3. [Tech Stack](#tech-stack)
+4. [Getting Started](#getting-started)
+5. [Project Structure](#project-structure)
+6. [Features](#features)
+7. [Development](#development)
+8. [Deployment](#deployment)
+9. [Contributing](#contributing)
+10. [License](#license)
+
+---
+
+## Overview
+
+A clean and modern portfolio built with Next.js to showcase Raza Haider’s frontend development skills and projects—a reflection of creativity, performance, and design.
+
+---
+
+## Demo
+
+Live preview: [razahaider-three.vercel.app](https://razahaider-three.vercel.app)
+
+---
+
+## Tech Stack
+
+* **Framework**: Next.js (bootstrapped via create-next-app)
+* **Language**: TypeScript (\~92%)
+* **Styling**: CSS
+* **Font Optimization**: `next/font`
+* **Containerization**: Docker (Dockerfile present)
+
+---
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   ```bash
+   git clone https://github.com/raza-h/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies using your preferred package manager:**
+
+   ```bash
+   yarn
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   yarn dev
+   ```
+
+4. **Open** [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+
+5. **Start editing** `app/page.tsx` to see your changes live. Hot-reloading is enabled.
+
+---
+
+## Project Structure *(simplified)*
+
+```
+.
+├── app/               # Core layout/routes
+├── components/        # UI and common components
+├── views/             # Page components
+├── constants/         # Application constants
+├── types/             # Common types
+├── hooks/             # Custom React hooks
+├── public/            # Static assets (images, fonts)
+├── utils/             # Utility functions/helpers
+├── Dockerfile         # Docker configuration
+├── .dockerignore      # Files to exclude in Docker context
+├── .gitignore         # Git ignore patterns
+├── next.config.ts     # Next.js configuration
+├── tsconfig.json      # TypeScript configuration
+├── eslint.config.mjs  # ESLint setup
+├── postcss.config.mjs # PostCSS setup
+├── package.json       # Project metadata & scripts
+└── README.md          # This documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*(Adjust this if you have deeper nested folders or extra directories.)*
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features
 
-## Learn More
+* Lightweight, minimalistic portfolio design
+* Pre-configured with TypeScript and ESLint for robust type safety and linting
+* Optimized font loading with next/font
+* Docker-ready to support containerized deployment
+* Structured with reusable components and clean folder architecture
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Linting**
+  ESLint is set up—run `yarn lint` (or equivalent) to check for issues.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* **Build**
+  To test production builds locally:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  ```bash
+  yarn build
+  yarn start
+  ```
+
+---
+
+## Deployment
+
+* The project is deployable on Vercel, which powers the live demo.
+* To deploy manually on Vercel:
+
+  1. Connect your GitHub repository in Vercel dashboard.
+  2. Allow automatic builds on commits to `master`.
+  3. Vercel will manage builds and optimize output.
+
+---
+
+## Contributing
+
+Thank you for your interest! I currently have no open issues or pull requests, but contributions are welcome. Before contributing, please check for open discussions or contact me directly.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
+
+---
+
+Feel free to ask if you'd like additional sections—like contribution guidelines, code examples, or screenshots—added to the README!
+
+[1]: https://github.com/raza-h/portfolio "GitHub - raza-h/portfolio: Raza Haider's software engineering portfolio."
