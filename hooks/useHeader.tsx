@@ -23,12 +23,14 @@ const useHeader = (sectionSelector: string = "section") => {
     };
   }, [left, width]);
 
-  const toggleSidebar = () => {
+  const toggleSidebar = (_e: unknown, base = false) => {
     if (window.innerWidth < 1024) {
       if (left[0] === "-") setLeft("0%");
       else setLeft("-100%");
     } else {
-      setShowHeader(!showHeader);
+      if (!base) {
+        setShowHeader(!showHeader);
+      }
     }
   };
 

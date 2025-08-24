@@ -75,7 +75,7 @@ const Header = () => {
                 key={link?.hrefs?.[0]}
                 color={link?.hrefs?.includes(hash) ? "brand.primary" : ""}
                 cursor={"pointer"}
-                onClick={link?.hrefs?.[0] !== "#" ? toggleSidebar : () => {}}
+                onClick={(e) => toggleSidebar(e, link?.hrefs?.[0] === '#')}
                 _hover={{
                   textDecor: "none",
                   color: "brand.primary",
