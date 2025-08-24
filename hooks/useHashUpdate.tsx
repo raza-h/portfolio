@@ -20,7 +20,7 @@ export default function useHashUpdate(
 
     const onScroll = () => {
       if (sections?.length) {
-        let currentSection: Element = sections[0];
+        let currentSection: Element;
 
         sections.forEach((section) => {
           const rect = section.getBoundingClientRect();
@@ -32,11 +32,13 @@ export default function useHashUpdate(
           }
         });
 
-        if (currentSection) {
+        if (currentSection!) {
           const newHash =
             currentSection?.id === "home" ? "#" : `#${currentSection.id}`;
           updateURL(newHash);
           setHash(newHash);
+        } else {
+          setHash('#unknown');
         }
       }
     };
