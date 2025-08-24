@@ -1,6 +1,16 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { debounce } from "lodash";
 
+const updateURL = debounce((newHash) => {
+  if (window.location.hash !== newHash) {
+    history.replaceState(
+      null,
+      "",
+      window.location.origin + window.location.pathname + newHash
+    );
+  }
+}, 500);
+
 export default function useHashUpdate(
   sectionSelector: string,
   setHash: Dispatch<SetStateAction<string>>
@@ -25,17 +35,14 @@ export default function useHashUpdate(
         if (currentSection) {
           const newHash =
             currentSection?.id === "home" ? "#" : `#${currentSection.id}`;
-          if (window.location.hash !== newHash) {
-            history.replaceState(null, "", window.location.origin + window.location.pathname + newHash);
-          }
+          updateURL(newHash);
           setHash(newHash);
         }
       }
     };
 
-    const scrollEvent = debounce(onScroll, 10);
-    window.addEventListener("scroll", scrollEvent);
+    window.addEventListener("scroll", onScroll);
 
-    return () => window.removeEventListener("scroll", scrollEvent);
+    return () => window.removeEventListener("scroll", onScroll);
   }, [sectionSelector, setHash]);
 }
