@@ -6,7 +6,7 @@ import { TechListProps } from "@/types";
 
 const TechList: FC<TechListProps> = ({ list = [] }) => {
   return (
-    <HStack w={"100%"} flexWrap={"wrap"}>
+    <HStack w={"100%"} flexWrap={"wrap"} pos={'relative'}>
       {list?.map((technology) => (
         <TechChip key={technology} technology={TECH_CHIP[technology]} />
       ))}

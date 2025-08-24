@@ -27,11 +27,14 @@ export type Technology = {
   name: string;
   logo: string;
   color?: string;
+  width?: number;
 };
 
 export type TechChipProps = {
   technology: Technology;
 };
+
+export type TechChipMap = { [key: string]: Technology };
 
 export type TechIdentifier = keyof typeof TECH_CHIP;
 

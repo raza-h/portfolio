@@ -5,7 +5,19 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["@chakra-ui/react"],
   },
   devIndicators: false,
-  output: 'standalone',
+  output: "standalone",
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.shields.io",
+        pathname: "/**",
+        port: '',
+      },
+    ],
+    dangerouslyAllowSVG: true, 
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
 };
 
 export default nextConfig;
