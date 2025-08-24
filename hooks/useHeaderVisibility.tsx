@@ -5,10 +5,8 @@ function useHeaderVisibility(
   setWidth: Dispatch<SetStateAction<number>>
 ) {
   const lastScrollY = useRef(0);
-  useEffect(() => {
-    let activeEvent: "scroll" | "wheel" =
-      window.innerWidth < 1024 ? "scroll" : "wheel";
 
+  useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
@@ -21,27 +19,21 @@ function useHeaderVisibility(
 
     const handleResize = () => {
       setWidth(window.innerWidth);
-      const newEvent = window.innerWidth < 1024 ? "scroll" : "wheel";
-      if (newEvent !== activeEvent) {
-        window.removeEventListener(activeEvent, handleScroll);
-        activeEvent = newEvent;
-        window.addEventListener(activeEvent, handleScroll, { passive: true });
-      }
     };
 
     const handleScrollToTop = () => {
       if (window.scrollY === 0) setShowHeader(true);
     };
 
-    setWidth(window.innerWidth);
-    window.addEventListener(activeEvent, handleScroll, { passive: true });
-    window.addEventListener("resize", handleResize);
+    handleResize();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("scroll", handleScrollToTop);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener(activeEvent, handleScroll);
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("scroll", handleScrollToTop);
+      window.removeEventListener("resize", handleResize);
     };
   }, [setShowHeader, setWidth]);
 }

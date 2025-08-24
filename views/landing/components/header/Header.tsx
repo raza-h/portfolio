@@ -61,7 +61,9 @@ const Header = () => {
           >
             <Image
               src={"/icons/close.svg"}
+              aria-label="Close Menu"
               w={10}
+              h={10}
               position={"absolute"}
               top={4}
               right={4}
@@ -91,8 +93,10 @@ const Header = () => {
           </HStack>
           <Image
             alt={"Hamburger Menu"}
+            aria-label="Show Menu"
             src={"/icons/menu.svg"}
             w={10}
+            h={10}
             display={[...repeat(3, "block"), "none"]}
             onClick={toggleSidebar}
             cursor={"pointer"}
