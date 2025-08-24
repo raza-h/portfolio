@@ -57,6 +57,8 @@ const ProjectGrid: FC<{
             width={1133}
             height={650}
             alt={project?.title}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1133px"
+            quality={100}
           />
         </VStack>
         <VStack
