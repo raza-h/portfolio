@@ -77,7 +77,7 @@ const Home = () => {
               alt={"Hero Section Image - Raza Haider"}
               src={"/images/hero.png"}
               id={"hero-image"}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, (max-width: 1280px) 70vw, (max-width: 1536px) 60vw, 50vw"
+              sizes="(min-width: 1040px) calc(50vw - 84px), (min-width: 780px) calc(100vw - 128px), (min-width: 480px) calc(100vw - 64px), calc(100vw - 32px)"
               priority
             />
           </VStack>

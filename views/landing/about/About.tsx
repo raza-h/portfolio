@@ -97,7 +97,7 @@ const About = () => {
               width={2459}
               height={2665}
               loading={"lazy"}
-              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw"
+              sizes="(min-width: 480px) 367px, 297px"
             />
           </VStack>
         </VStack>
