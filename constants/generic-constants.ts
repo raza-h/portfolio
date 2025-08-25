@@ -95,7 +95,7 @@ export const PROJECTS = [
         height: 960,
       },
       sizes:
-        "(max-width: 640px) 90vw, (max-width: 1024px) 60vw, (max-width: 1536px) 40vw, 30vw",
+        "(min-width: 2220px) 1133px, (min-width: 1040px) calc(55.17vw - 81px), calc(95.56vw - 19px)",
     },
     tech: ["React", "Ant Design", "Firebase", "Docker", "Sentry"],
   },
@@ -112,7 +112,7 @@ export const PROJECTS = [
         height: 2324,
       },
       sizes:
-        "(max-width: 640px) 100vw, (max-width: 1024px) 80vw, (max-width: 1536px) 60vw, 50vw",
+        "(min-width: 2700px) calc(100vw - 1133px), (min-width: 1040px) calc(64.27vw - 175px), calc(95.56vw - 19px)",
     },
     tech: [
       "React",
