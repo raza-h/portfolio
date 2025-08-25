@@ -31,6 +31,7 @@ const Footer = () => {
                 alt="Raza Haider - Software Engineer"
                 width={80}
                 height={80}
+                loading="lazy"
               />
             </Link>
             <VStack align={"start"}>

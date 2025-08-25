@@ -59,6 +59,7 @@ const Home = () => {
                   width={32}
                   height={32}
                   alt={`Raza Haider ${link?.name}`}
+                  priority
                 />
               </Link>
             ))}
@@ -71,13 +72,13 @@ const Home = () => {
         <figure className="w-full">
           <VStack align={"center"} position={"relative"}>
             <Image
-              width={700}
-              height={467}
+              width={1536}
+              height={1024}
               alt={"Hero Section Image - Raza Haider"}
               src={"/images/hero.png"}
               id={"hero-image"}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, (max-width: 1280px) 70vw, (max-width: 1536px) 60vw, 50vw"
               priority
-              sizes="(max-width: 768px) 100vw, 700px"
             />
           </VStack>
         </figure>

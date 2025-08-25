@@ -9,6 +9,7 @@ const TechStackChip: FC<TechChipProps> = ({ technology }) => {
       alt={technology?.name}
       width={technology?.width ?? 100}
       height={28}
+      loading={'lazy'}
     />
   );
 };

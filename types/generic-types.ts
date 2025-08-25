@@ -50,3 +50,22 @@ export type TooltipProps = ChakraTooltip.RootProps & {
 };
 
 export type ButtonProps = ChakraButtonProps & { alternate?: boolean };
+
+export type Project = {
+  id: string | number;
+  title: string;
+  description?: string;
+  image: {
+    path: string;
+    dimensions?: { width: number; height: number };
+    sizes?: string;
+  },
+  link?: string;
+  tech: string[];
+};
+
+export type ProjectGridProps = {
+  project: Project;
+  index: number;
+  isLast: boolean;
+};

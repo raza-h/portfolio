@@ -44,6 +44,7 @@ const Contact = () => {
                   alt={`Raza Haider ${link?.name}`}
                   width={25}
                   height={25}
+                  loading="lazy"
                 />
                 <Text as={"h5"} fontFamily={FONTS.title}>
                   {link?.identifier}
