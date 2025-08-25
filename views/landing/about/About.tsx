@@ -94,10 +94,10 @@ const About = () => {
             <Image
               alt={"Raza Haider Profile Picture"}
               src={"/images/profile-pic.png"}
-              width={600}
-              height={650}
+              width={2459}
+              height={2665}
               loading={"lazy"}
-              sizes="(max-width: 768px) 80vw, 600px"
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw"
             />
           </VStack>
         </VStack>

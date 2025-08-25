@@ -88,7 +88,15 @@ export const PROJECTS = [
     description:
       "Dedicated web application for sellers to manage stores, listings, inventory, orders, and fulfillment on OLX.",
     link: "https://sellercenter.olx.com.pk",
-    imagePath: "/images/olx-seller-center-portfolio.png",
+    image: {
+      path: "/images/olx-seller-center-portfolio.png",
+      dimensions: {
+        width: 1133,
+        height: 960,
+      },
+      sizes:
+        "(max-width: 640px) 90vw, (max-width: 1024px) 60vw, (max-width: 1536px) 40vw, 30vw",
+    },
     tech: ["React", "Ant Design", "Firebase", "Docker", "Sentry"],
   },
   {
@@ -97,7 +105,15 @@ export const PROJECTS = [
     description:
       "AI-powered web application for online IQ testing that deliver instant results for casual cognitive assessment.",
     link: "https://iq-test.ai",
-    imagePath: "/images/iq-test-ai-portfolio.png",
+    image: {
+      path: "/images/iq-test-ai-portfolio.png",
+      dimensions: {
+        width: 3024,
+        height: 2324,
+      },
+      sizes:
+        "(max-width: 640px) 100vw, (max-width: 1024px) 80vw, (max-width: 1536px) 60vw, 50vw",
+    },
     tech: [
       "React",
       "Chakra UI",

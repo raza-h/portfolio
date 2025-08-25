@@ -71,6 +71,7 @@ const Header = () => {
               display={[...repeat(3, "block"), "none"]}
               cursor={"pointer"}
               alt={"Close Button"}
+              loading="lazy"
             />
             {INTERNAL_LINKS?.map((link) => (
               <Link

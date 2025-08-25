@@ -10,19 +10,13 @@ import { repeat } from "@/utils";
 import { LandingButton } from "@/views/landing/components";
 import { TechList } from "@/components";
 import "@/views/landing/projects/project-grid/index.css";
+import { ProjectGridProps } from "@/types";
 
-const ProjectGrid: FC<{
-  project: {
-    id: string | number;
-    title: string;
-    description?: string;
-    imagePath: string;
-    link?: string;
-    tech: string[];
-  };
-  index: number;
-  isLast: boolean;
-}> = ({ project, index = -1, isLast = false }) => {
+const ProjectGrid: FC<ProjectGridProps> = ({
+  project,
+  index = -1,
+  isLast = false,
+}) => {
   const fadeInOptions = {
     transition: "opacity 0.7s ease-out",
   };
@@ -53,11 +47,15 @@ const ProjectGrid: FC<{
           {...imageProps}
         >
           <Image
-            src={project?.imagePath}
-            width={1133}
-            height={650}
+            src={project?.image?.path}
+            width={project?.image?.dimensions?.width ?? 1133}
+            height={project?.image?.dimensions?.height ?? 650}
             alt={project?.title}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1133px"
+            loading="lazy"
+            sizes={
+              project?.image?.sizes ??
+              "(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1133px"
+            }
             quality={100}
           />
         </VStack>
