@@ -31,7 +31,7 @@ const Home = () => {
             all={"unset"}
             color={"brand.primary"}
             fontFamily={FONTS.title}
-            fontSize={[...repeat(2, 35), 40, 50]}
+            fontSize={[...repeat(2, 35), 40, 45, 50]}
             textAlign={"left"}
             fontWeight={600}
             as={"h1"}
@@ -70,14 +70,20 @@ const Home = () => {
           </Text>
         </VStack>
         <figure className="w-full">
-          <VStack align={"center"} position={"relative"}>
+          <VStack
+            ml={"auto"}
+            mr={[...repeat(4, 'auto'), 10]}
+            align={[...repeat(3, "center"), "end"]}
+            position={"relative"}
+            w={[...repeat(2, "100%"), "90%", "100%", "85%", "70%"]}
+          >
             <Image
-              width={1536}
-              height={1024}
+              width={1185}
+              height={805}
               alt={"Hero Section Image - Raza Haider"}
               src={"/images/hero.png"}
               id={"hero-image"}
-              sizes="(min-width: 1040px) calc(50vw - 84px), (min-width: 780px) calc(100vw - 128px), (min-width: 480px) calc(100vw - 64px), calc(100vw - 32px)"
+              sizes="(min-width: 1540px) calc(35vw - 59px), (min-width: 1280px) calc(42.5vw - 71px), (min-width: 1040px) calc(50vw - 84px), (min-width: 780px) calc(90vw - 115px), (min-width: 480px) calc(100vw - 64px), calc(100vw - 32px)"
               priority
             />
           </VStack>
