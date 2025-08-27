@@ -9,8 +9,8 @@ import { Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import { repeat } from "@/utils";
 import { LandingButton } from "@/views/landing/components";
 import { TechList } from "@/components";
-import "@/views/landing/projects/project-grid/index.css";
 import { ProjectGridProps } from "@/types";
+import styles from "@/views/landing/projects/project-grid/index.module.css";
 
 const ProjectGrid: FC<ProjectGridProps> = ({
   project,
@@ -106,7 +106,7 @@ const ProjectGrid: FC<ProjectGridProps> = ({
             color={"brand.primary"}
             fontFamily={FONTS.large}
             fontSize={[...repeat(3, "xl"), "3xl"]}
-            className={comingSoonProps?.opacity === 1 ? "blink" : ""}
+            className={comingSoonProps?.opacity === 1 ? styles.blink : ""}
           >
             More Coming Soon...
           </Text>

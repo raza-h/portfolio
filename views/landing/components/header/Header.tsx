@@ -33,7 +33,7 @@ const Header = () => {
       >
         <Link href={"#"}>
           <NextImage
-            src={"/icons/logo.png"}
+            src={"/icons/logo.webp"}
             width={50}
             height={50}
             alt={"Raza Haider Logo"}

@@ -11,7 +11,7 @@ import { LandingButton } from "@/views/landing/components";
 import { TextArea, Input } from "@/components";
 import { ContactFormValues } from "@/views/landing/contact/contact-form/types";
 import { CONTACT_FORM_VALIDATION_SCHEMA } from "@/views/landing/contact/contact-form/constants";
-import "@/views/landing/contact/contact-form/index.css";
+import styles from "@/views/landing/contact/contact-form/index.module.css";
 
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
@@ -59,9 +59,9 @@ const ContactForm = () => {
       rounded={"md"}
       bg={"brand.card"}
       padding={5}
-      className="pulsed"
+      className={styles.pulsed}
     >
-      <form onSubmit={handleSubmit(onSubmit)} className="form">
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <Heading as={"h4"} fontFamily={FONTS.title} marginBottom={5}>
           Send a message
         </Heading>

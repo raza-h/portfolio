@@ -93,7 +93,7 @@ const About = () => {
           >
             <Image
               alt={"Raza Haider Profile Picture"}
-              src={"/images/profile-pic.png"}
+              src={"/images/profile-pic.webp"}
               width={2459}
               height={2665}
               loading={"lazy"}

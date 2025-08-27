@@ -4,7 +4,7 @@ export const SERVICES = [
   {
     id: 1,
     icon: {
-      src: "/images/web-dev.png",
+      src: "/images/web-dev.webp",
       dimensions: {
         width: 400,
         height: 400,
@@ -89,7 +89,7 @@ export const PROJECTS = [
       "Dedicated web application for sellers to manage stores, listings, inventory, orders, and fulfillment on OLX.",
     link: "https://sellercenter.olx.com.pk",
     image: {
-      path: "/images/olx-seller-center-portfolio.png",
+      path: "/images/olx-seller-center-portfolio.webp",
       dimensions: {
         width: 1133,
         height: 960,
@@ -106,7 +106,7 @@ export const PROJECTS = [
       "AI-powered web application for online IQ testing that deliver instant results for casual cognitive assessment.",
     link: "https://iq-test.ai",
     image: {
-      path: "/images/iq-test-ai-portfolio.png",
+      path: "/images/iq-test-ai-portfolio.webp",
       dimensions: {
         width: 3024,
         height: 2324,

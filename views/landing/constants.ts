@@ -41,7 +41,7 @@ export const CREDIBILITY_LINKS = [
       width: 100,
       height: 50,
     },
-    imagePath: "/images/dubizzle-group-logo.png",
+    imagePath: "/images/dubizzle-group-logo.webp",
   },
   {
     href: "https://olx.com.pk",
@@ -59,7 +59,7 @@ export const CREDIBILITY_LINKS = [
       width: 100,
       height: 50,
     },
-    imagePath: "/images/fast-logo.png",
+    imagePath: "/images/fast-logo.webp",
   },
 ];
 
