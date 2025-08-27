@@ -3,7 +3,7 @@ import { HStack, Heading, Text, VStack } from "@chakra-ui/react";
 import { Typewriter, Link } from "@/components";
 import { repeat } from "@/utils";
 import { SERVICES, SOCIAL_LINKS, FONTS } from "@/constants";
-import "@/views/landing/home/index.css";
+import styles from "@/views/landing/home/index.module.css";
 
 const Home = () => {
   return (
@@ -81,7 +81,7 @@ const Home = () => {
               width={1185}
               height={805}
               alt={"Hero Section Image - Raza Haider"}
-              src={"/images/hero.png"}
+              src={"/images/hero.webp"}
               id={"hero-image"}
               sizes="(min-width: 1540px) calc(35vw - 59px), (min-width: 1280px) calc(42.5vw - 71px), (min-width: 1040px) calc(50vw - 84px), (min-width: 780px) calc(90vw - 115px), (min-width: 480px) calc(100vw - 64px), calc(100vw - 32px)"
               priority
@@ -110,7 +110,7 @@ const Home = () => {
         left={"95%"}
         aria-label="Scroll to About Section"
       >
-        <figure className="scroll-to-bottom" />
+        <figure className={styles.scrollToBottom} />
       </Link>
     </VStack>
   );

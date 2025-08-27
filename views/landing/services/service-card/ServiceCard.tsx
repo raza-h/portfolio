@@ -8,7 +8,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { useInViewFadeIn } from "@/hooks";
 import { FONTS } from "@/constants";
 import { repeat } from "@/utils";
-import "@/views/landing/services/service-card/index.css";
+import styles from "@/views/landing/services/service-card/index.module.css";
 
 const ServiceCard: FC<{
   id: string | number;
@@ -40,7 +40,7 @@ const ServiceCard: FC<{
       bg={"brand.card"}
       rounded={"lg"}
       cursor={isDragging ? "grabbing" : "move"}
-      className="card"
+      className={styles.card}
       display={"flex"}
       flexDir={"column"}
       justifyContent={"space-between"}

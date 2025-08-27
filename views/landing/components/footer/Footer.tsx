@@ -27,7 +27,7 @@ const Footer = () => {
           <HStack gap={4} width={[...repeat(3, "100%"), undefined]}>
             <Link href={"#"}>
               <Image
-                src={"/icons/logo.png"}
+                src={"/icons/logo.webp"}
                 alt="Raza Haider - Software Engineer"
                 width={80}
                 height={80}
