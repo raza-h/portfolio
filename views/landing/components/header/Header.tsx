@@ -33,9 +33,9 @@ const Header = () => {
       >
         <Link href={"#"}>
           <NextImage
-            src={"/icons/logo.svg"}
-            width={60}
-            height={60}
+            src={"/icons/logo.png"}
+            width={50}
+            height={50}
             alt={"Raza Haider Logo"}
             priority
           />
