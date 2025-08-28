@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <link rel="icon" href="/icons/logo.webp" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body
         className={`${montserrat.variable} ${inter.variable} ${roboto.variable} ${inria_serif.variable} ${monoton.variable} antialiased`}
