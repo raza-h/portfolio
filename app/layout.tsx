@@ -37,7 +37,7 @@ const monoton = Monoton({
 });
 
 export const metadata: Metadata = {
-  title: "Raza Haider - SWE",
+  title: "Raza Haider - Software Engineer | Full-Stack Developer | Frontend Engineer",
   description:
     "Software Engineer specializing in Full-Stack, Frontend, and AI solutions. Expert in React.js, Next.js, Node.js, Express.js, Stripe integration, API development, and ChatGPT/OpenAI applications.",
 };
@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico?v=2" />
       </head>
       <body
         className={`${montserrat.variable} ${inter.variable} ${roboto.variable} ${inria_serif.variable} ${monoton.variable} antialiased`}
