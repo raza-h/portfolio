@@ -61,11 +61,11 @@ const About = () => {
               Dubizzle Group
             </Text>
             , I contributed to transforming the OLX Marketplace into a hybrid
-            e-commerce platform, leading key features in the{" "}
+            e-commerce platform, leading the development of the key features of{" "}
             <Text color={"brand.primary"} as={"span"}>
               OLX Seller Center
             </Text>{" "}
-            and improving performance by 35%. I hold a BS in Computer Science
+            and improving its initial load performance by 35%. I hold a BS in Computer Science
             from{" "}
             <Text color={"brand.primary"} as={"span"}>
               FAST

@@ -37,7 +37,7 @@ const monoton = Monoton({
 });
 
 export const metadata: Metadata = {
-  title: "Raza Haider - SWE",
+  title: "Raza Haider - Software Engineer | Full-Stack Developer | Frontend Engineer",
   description:
     "Software Engineer specializing in Full-Stack, Frontend, and AI solutions. Expert in React.js, Next.js, Node.js, Express.js, Stripe integration, API development, and ChatGPT/OpenAI applications.",
 };
