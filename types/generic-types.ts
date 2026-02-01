@@ -55,10 +55,14 @@ export type Project = {
   id: string | number;
   title: string;
   description?: string;
-  image: {
+  image?: {
     path: string;
     dimensions?: { width: number; height: number };
     sizes?: string;
+  },
+  video?: {
+    path: string;
+    dimensions?: { width: number; height: number };
   },
   link?: string;
   tech: string[];

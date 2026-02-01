@@ -12,9 +12,9 @@ const About = () => {
       bg={"brand.card"}
       paddingX={[4, 6, 8, 14]}
       paddingY={[8, ...repeat(3, 12), 14]}
-      gap={20}
+      gap={[10, 20]}
     >
-      <HStack width={"100%"} justify={"space-evenly"}>
+      <HStack width={"100%"} justify={["center", "space-evenly"]} flexWrap={"wrap"} gapX={[20, 4]} alignItems={"center"}>
         {CREDIBILITY_LINKS?.map((link) => (
           <Link key={link?.href} href={link?.href} target="_blank">
             <Image
@@ -55,23 +55,40 @@ const About = () => {
             textAlign={"justify"}
             fontWeight={400}
           >
-            I&apos;m Raza Haider, a Software Engineer with expertise in
-            React.js, Next.js, and modern UI frameworks. At{" "}
+            I&apos;m Raza Haider, a Software Engineer specializing in React.js, Next.js, Express.js, and MySQL. 
+            <br />
+            <br />
+            At{" "}
+            <Text color={"brand.primary"} as={"span"}>
+              Jazz
+            </Text>
+            , I direct the end-to-end development of the Jazz Point Back Office and
+            deliver backend services for{" "}
+            <Text color={"brand.primary"} as={"span"}>
+              Jazz Point
+            </Text>
+            , an application with 10K+ downloads on Google Play. I have implemented
+            comprehensive unit and integration tests on Jazz Point, achieving 92.64% branch coverage,
+            and introduced reusable component architecture with AI-augmented workflows,
+            reducing development time by 58%. 
+            <br />
+            <br />
+            Previously at{" "}
             <Text color={"brand.primary"} as={"span"}>
               Dubizzle Group
             </Text>
             , I contributed to transforming the OLX Marketplace into a hybrid
-            e-commerce platform, leading the development of the key features of{" "}
+            e-commerce platform, led development of key features for{" "}
             <Text color={"brand.primary"} as={"span"}>
               OLX Seller Center
-            </Text>{" "}
-            and improving its initial load performance by 35%. I hold a BS in Computer Science
-            from{" "}
+            </Text>
+            , and improved initial load performance by 35%. I hold a BS in Computer
+            Science from{" "}
             <Text color={"brand.primary"} as={"span"}>
               FAST
             </Text>
-            , graduating with a 3.64 CGPA and multiple Dean&apos;s Honor List
-            awards. I build fast, scalable, and maintainable web applications.
+            , graduating with a 3.64 CGPA and multiple Dean&apos;s Honor List awards. I
+            build fast, scalable, and maintainable web applications.
           </Text>
           <TechList list={TECH_STACK} />
         </VStack>

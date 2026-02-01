@@ -35,6 +35,15 @@ export const INTERNAL_LINKS = [
 
 export const CREDIBILITY_LINKS = [
   {
+    href: "https://jazz.com.pk",
+    name: "Jazz (VEON)",
+    dimensions: {
+      width: 80,
+      height: 50,
+    },
+    imagePath: "/images/jazz-logo.webp",
+  },
+  {
     href: "https://dubizzlegroup.com",
     name: "Dubizzle Group",
     dimensions: {
@@ -67,6 +76,9 @@ export const TECH_STACK = [
   "React",
   "Next",
   "Node",
+  "Express",
+  "MySQL",
+  "Redis",
   "Ant Design",
   "Material UI",
   "Tailwind CSS",

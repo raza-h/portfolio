@@ -100,6 +100,17 @@ export const PROJECTS = [
     tech: ["React", "Ant Design", "Firebase", "Docker", "Sentry"],
   },
   {
+    id: 3,
+    title: "Jazz Point",
+    description:
+      "Performance and transaction monitoring application with 10K+ downloads, providing real-time visibility into SIM balances, retailer activity, bundle and recharge sales, and transaction history.",
+    video: {
+      path: "/videos/jazz-point.mp4",
+    },
+    tech: ["Express", "Node", "MySQL", "Redis", "Docker", "React", "Ant Design"],
+    link: 'https://play.google.com/store/apps/details?id=com.jazz.jazzpoint',
+  },
+  {
     id: 2,
     title: "IQTest.ai",
     description:
@@ -180,7 +191,7 @@ export const TECH_CHIP: TechChipMap = {
     name: "OpenAI",
     logo: "https://img.shields.io/badge/-OpenAI-00b3b3?style=for-the-badge&logo=openai&logoColor=00b3b3&labelColor=282828",
     color: "#00b3b3",
-    width: 107.5,
+    width: 80,
   },
   Sentry: {
     name: "Sentry",
@@ -261,4 +272,16 @@ export const TECH_CHIP: TechChipMap = {
     color: "#3ecf8e",
     width: 125,
   },
+  MySQL: {
+    name: "MySQL",
+    logo: "https://img.shields.io/badge/-MySQL-4479a1?style=for-the-badge&logo=mysql&logoColor=4479a1&labelColor=282828",
+    color: "#4479a1",
+    width: 100,
+  },
+  Redis: {
+    name: "Redis",
+    logo: "https://img.shields.io/badge/-Redis-ff6347?style=for-the-badge&logo=redis&logoColor=ff6347&labelColor=282828",
+    color: "#ff6347",
+    width: 100,
+  }
 };

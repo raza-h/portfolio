@@ -46,18 +46,34 @@ const ProjectGrid: FC<ProjectGridProps> = ({
           ref={imageRef}
           {...imageProps}
         >
-          <Image
-            src={project?.image?.path}
-            width={project?.image?.dimensions?.width ?? 1133}
-            height={project?.image?.dimensions?.height ?? 650}
-            alt={project?.title}
-            loading="lazy"
-            sizes={
-              project?.image?.sizes ??
-              "(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1133px"
-            }
-            quality={100}
-          />
+          {project?.image && (
+            <Image
+              src={project?.image?.path}
+              width={project?.image?.dimensions?.width ?? 1133}
+              height={project?.image?.dimensions?.height ?? 650}
+              alt={project?.title}
+              loading="lazy"
+              sizes={
+                project?.image?.sizes ??
+                "(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1133px"
+              }
+              quality={100}
+            />
+          )}
+          {project?.video && (
+            <video
+              src={project.video.path}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              width={project.video.dimensions?.width ?? 1133}
+              height={project.video.dimensions?.height ?? 650}
+              controls={false}
+              className={styles.video}
+            />
+          )}
         </VStack>
         <VStack
           align={"start"}
