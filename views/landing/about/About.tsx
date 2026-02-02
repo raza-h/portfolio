@@ -55,7 +55,8 @@ const About = () => {
             textAlign={"justify"}
             fontWeight={400}
           >
-            I&apos;m Raza Haider, a Software Engineer specializing in React.js, Next.js, Express.js, and MySQL. 
+            I&apos;m Raza Haider, a Software Engineer specializing in React.js, Next.js, Express.js, and MySQL. I
+            build <Text color={"brand.primary"} as={"span"}>fast, scalable, and maintainable web applications</Text>.
             <br />
             <br />
             At{" "}
@@ -71,24 +72,21 @@ const About = () => {
             comprehensive unit and integration tests on Jazz Point, achieving 92.64% branch coverage,
             and introduced reusable component architecture with AI-augmented workflows,
             reducing development time by 58%. 
-            <br />
-            <br />
             Previously at{" "}
             <Text color={"brand.primary"} as={"span"}>
               Dubizzle Group
             </Text>
             , I contributed to transforming the OLX Marketplace into a hybrid
-            e-commerce platform, led development of key features for{" "}
+            e-commerce platform by leading the development of key features for{" "}
             <Text color={"brand.primary"} as={"span"}>
               OLX Seller Center
-            </Text>
-            , and improved initial load performance by 35%. I hold a BS in Computer
+            </Text> and improving its initial page load performance by 35%.
+            <br /><br /> I hold a BS in Computer
             Science from{" "}
             <Text color={"brand.primary"} as={"span"}>
               FAST
             </Text>
-            , graduating with a 3.64 CGPA and multiple Dean&apos;s Honor List awards. I
-            build fast, scalable, and maintainable web applications.
+            , graduating with a 3.64 CGPA and multiple Dean&apos;s Honor List awards.
           </Text>
           <TechList list={TECH_STACK} />
         </VStack>
