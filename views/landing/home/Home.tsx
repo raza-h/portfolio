@@ -72,7 +72,7 @@ const Home = () => {
         <figure className="w-full">
           <VStack
             ml={"auto"}
-            mr={[...repeat(4, 'auto'), 10]}
+            mr={[...repeat(4, "auto"), 10]}
             align={[...repeat(3, "center"), "end"]}
             position={"relative"}
             w={[...repeat(2, "100%"), "90%", "100%", "85%", "70%"]}
@@ -83,7 +83,7 @@ const Home = () => {
               alt={"Hero Section Image - Raza Haider"}
               src={"/images/hero.webp"}
               id={"hero-image"}
-              sizes="(min-width: 1540px) calc(35vw - 59px), (min-width: 1280px) calc(42.5vw - 71px), (min-width: 1040px) calc(50vw - 84px), (min-width: 780px) calc(90vw - 115px), (min-width: 480px) calc(100vw - 64px), calc(100vw - 32px)"
+              sizes="(min-width: 1540px) 450px, (min-width: 1280px) 540px, (min-width: 1040px) 600px, (min-width: 780px) 85vw, (min-width: 480px) 92vw, 92vw"
               priority
             />
           </VStack>
@@ -97,7 +97,7 @@ const Home = () => {
       >
         <Typewriter
           words={SERVICES?.map((service) =>
-            service?.title?.split(" ")?.join("\xa0\xa0")
+            service?.title?.split(" ")?.join("\xa0\xa0"),
           )}
           loop={0}
           typeSpeed={120}
