@@ -36,9 +36,9 @@ export const INTERNAL_LINKS = [
 export const CREDIBILITY_LINKS = [
   {
     href: "https://jazz.com.pk",
-    name: "Jazz (VEON)",
+    name: "Jazz (PMCL), part of VEON",
     dimensions: {
-      width: 80,
+      width: 90,
       height: 50,
     },
     imagePath: "/images/jazz-logo.webp",
@@ -47,28 +47,31 @@ export const CREDIBILITY_LINKS = [
     href: "https://dubizzlegroup.com",
     name: "Dubizzle Group",
     dimensions: {
-      width: 100,
+      width: 140,
       height: 50,
     },
     imagePath: "/images/dubizzle-group-logo.webp",
+  },
+];
+
+export const PROJECT_LINKS = [
+  {
+    href: "https://play.google.com/store/apps/details?id=com.jazz.jazzworld&hl=en",
+    name: "SIMOSA (Jazz World)",
+    dimensions: {
+      width: 150,
+      height: 50,
+    },
+    imagePath: "/images/simosa-logo.webp",
   },
   {
     href: "https://olx.com.pk",
     name: "OLX Pakistan",
     dimensions: {
-      width: 60,
+      width: 80,
       height: 50,
     },
     imagePath: "/images/olx.svg",
-  },
-  {
-    href: "https://nu.edu.pk",
-    name: "National University of Computer and Emerging Sciences (FAST)",
-    dimensions: {
-      width: 100,
-      height: 50,
-    },
-    imagePath: "/images/fast-logo.webp",
   },
 ];
 

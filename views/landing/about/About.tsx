@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { TechList } from "@/components";
 import { FONTS } from "@/constants";
-import { CREDIBILITY_LINKS, TECH_STACK } from "@/views/landing/constants";
+import { CREDIBILITY_LINKS, PROJECT_LINKS, TECH_STACK } from "@/views/landing/constants";
 import { repeat } from "@/utils";
 import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
 
@@ -15,6 +15,7 @@ const About = () => {
       gap={[10, 20]}
     >
       <HStack width={"100%"} justify={["center", "space-evenly"]} flexWrap={"wrap"} gapX={[20, 4]} alignItems={"center"}>
+        <Text fontSize={18} fontWeight={300} fontFamily={FONTS.body} display={["none", "block"]}>EMPLOYED BY &nbsp;&nbsp; &gt;</Text>
         {CREDIBILITY_LINKS?.map((link) => (
           <Link key={link?.href} href={link?.href} target="_blank">
             <Image
@@ -116,6 +117,14 @@ const About = () => {
             />
           </VStack>
         </VStack>
+      </HStack>
+      <HStack width={"100%"} justify={["center", "space-evenly"]} flexWrap={"wrap"} gapX={[20, 4]} alignItems={"center"}>
+        <Text fontSize={18} fontWeight={300} fontFamily={FONTS.body} display={["none", "block"]}>WORKED ON &nbsp;&nbsp; &gt;</Text>
+        {PROJECT_LINKS?.map((link) => (
+          <Link key={link?.href} href={link?.href} target="_blank">
+            <Image src={link?.imagePath} alt={link?.name} width={link?.dimensions?.width ?? 100} height={link?.dimensions?.height ?? 50} loading={"lazy"} />
+          </Link>
+        ))}
       </HStack>
     </VStack>
   );

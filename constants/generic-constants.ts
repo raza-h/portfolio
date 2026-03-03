@@ -83,6 +83,23 @@ export const SERVICES = [
 
 export const PROJECTS = [
   {
+    id: 4,
+    title: "SIMOSA",
+    description:
+      "All-in-one digital app for Jazz, non-Jazz, and overseas Pakistanis to manage SIM services, lifestyle needs, social engagement, and AI-powered assistance seamlessly in one place.",
+    link: "https://play.google.com/store/apps/details?id=com.jazz.jazzworld&hl=en",
+    image: {
+      path: "/images/simosa.webp",
+      dimensions: {
+        width: 1133,
+        height: 1500,
+      },
+      sizes:
+        "(min-width: 2220px) 1133px, (min-width: 1040px) calc(55.17vw - 81px), calc(95.56vw - 19px)",
+    },
+    tech: ["NestJS", "Node", "Redis", "Swagger", "Docker"],
+  },
+  {
     id: 1,
     title: "OLX Seller Center",
     description:
@@ -283,5 +300,17 @@ export const TECH_CHIP: TechChipMap = {
     logo: "https://img.shields.io/badge/-Redis-ff6347?style=for-the-badge&logo=redis&logoColor=ff6347&labelColor=282828",
     color: "#ff6347",
     width: 100,
-  }
+  },
+  NestJS: {
+    name: "NestJS",
+    logo: "https://img.shields.io/badge/-NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=E0234E&labelColor=282828",
+    color: "#E0234E",
+    width: 100,
+  },
+  Swagger: {
+    name: "Swagger",
+    logo: "https://img.shields.io/badge/-Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=85EA2D&labelColor=282828",
+    color: "#85EA2D",
+    width: 122,
+  },
 };
