@@ -51,7 +51,6 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
         <link rel="icon" href="/favicon.ico?v=2" />
-        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
       </head>
       <body
         className={`${montserrat.variable} ${inter.variable} ${roboto.variable} ${inria_serif.variable} ${monoton.variable} antialiased`}
