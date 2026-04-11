@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { HStack, Heading, Text, VStack } from "@chakra-ui/react";
-import { Typewriter, Link } from "@/components";
+import { GraphicLink, Typewriter, Link } from "@/components";
 import { repeat } from "@/utils";
 import { SERVICES, SOCIAL_LINKS, FONTS } from "@/constants";
 import styles from "@/views/landing/home/index.module.css";
@@ -53,15 +53,19 @@ const Home = () => {
           </Text>
           <HStack>
             {SOCIAL_LINKS?.map((link) => (
-              <Link key={link?.href} href={link?.href} target="_blank">
-                <Image
-                  src={link?.imagePath}
-                  width={32}
-                  height={32}
-                  alt={`Raza Haider ${link?.name}`}
-                  priority
-                />
-              </Link>
+              <GraphicLink
+                key={link?.href}
+                graphic={{
+                  href: link.href,
+                  name: link.name,
+                  imagePath: link.imagePath,
+                  dimensions: { width: 32, height: 32 },
+                }}
+                alt={`Raza Haider ${link?.name}`}
+                target="_blank"
+                priority
+                gap={0}
+              />
             ))}
           </HStack>
           <Text fontSize={16} fontFamily={FONTS.title} marginTop={10}>
