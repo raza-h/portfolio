@@ -110,10 +110,10 @@ const About = () => {
         <VStack
           justifyContent={"space-evenly"}
           position={"relative"}
-          w={"40%"}
+          w={["100%", "100%", "100%", "40%"]}
           alignItems={"center"}
           gapY={6}
-          height={700}
+          height={[500, 500, 500, 700]}
         >
           <div
             className="badge-base LI-profile-badge"
@@ -124,12 +124,11 @@ const About = () => {
             data-vanity="razah1214"
             data-version="v1"
           />
-          <VStack alignItems={"center"} gap={8}>
+          <VStack alignItems={"center"} gap={4} w={'100%'}>
             <Text
               fontSize={18}
               fontWeight={300}
               fontFamily={FONTS.body}
-              display={["none", "block"]}
             >
               WORKING AT
             </Text>
