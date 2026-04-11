@@ -54,6 +54,16 @@ export const CREDIBILITY_LINKS = [
   },
 ];
 
+export const GOSAAS_LINK = {
+  href: "https://www.gosaas.ai",
+  name: "GoSaaS",
+  dimensions: {
+    width: 200,
+    height: 100,
+  },
+  imagePath: "/images/gosaas-ai-logo.svg",
+};
+
 export const PROJECT_LINKS = [
   {
     href: "https://play.google.com/store/apps/details?id=com.jazz.jazzworld&hl=en",

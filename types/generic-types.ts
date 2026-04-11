@@ -6,6 +6,7 @@ import {
   ButtonProps as ChakraButtonProps,
 } from "@chakra-ui/react";
 import { UniqueIdentifier } from "@dnd-kit/core";
+import { LinkProps } from "@chakra-ui/react";
 import { ReactNode, RefObject } from "react";
 
 export type DragItem = { id: UniqueIdentifier; component: ReactNode };
@@ -72,4 +73,23 @@ export type ProjectGridProps = {
   project: Project;
   index: number;
   isLast: boolean;
+};
+
+export type GraphicLinkGraphic = {
+  href: string;
+  name: string;
+  imagePath: string;
+  dimensions?: {
+    width?: number;
+    height?: number;
+  };
+};
+
+export type GraphicLinkProps = Omit<LinkProps, "children" | "href"> & {
+  graphic: GraphicLinkGraphic;
+  /** Shown below the image (e.g. caption for GoSaaS) */
+  children?: ReactNode;
+  priority?: boolean;
+  alt?: string;
+  gap?: number;
 };

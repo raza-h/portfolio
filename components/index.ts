@@ -1,4 +1,5 @@
 export { DragAndDrop } from "./drag-and-drop";
+export { GraphicLink } from "./graphic-link";
 export { Input } from "./input";
 export { Link } from "./link";
 export { Provider } from "./provider";

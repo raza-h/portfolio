@@ -1,8 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
-import { TechList } from "@/components";
+import { GraphicLink, TechList } from "@/components";
 import { FONTS } from "@/constants";
-import { CREDIBILITY_LINKS, PROJECT_LINKS, TECH_STACK } from "@/views/landing/constants";
+import {
+  CREDIBILITY_LINKS,
+  GOSAAS_LINK,
+  PROJECT_LINKS,
+  TECH_STACK,
+} from "@/views/landing/constants";
 import { repeat } from "@/utils";
 import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
 
@@ -14,22 +17,28 @@ const About = () => {
       paddingY={[8, ...repeat(3, 12), 14]}
       gap={[10, 20]}
     >
-      <HStack width={"100%"} justify={["center", "space-evenly"]} flexWrap={"wrap"} gapX={[20, 4]} alignItems={"center"}>
-        <Text fontSize={18} fontWeight={300} fontFamily={FONTS.body} display={["none", "block"]}>EMPLOYED BY &nbsp;&nbsp; &gt;</Text>
+      <HStack
+        width={"100%"}
+        justify={["center", "space-evenly"]}
+        flexWrap={"wrap"}
+        gapX={[20, 4]}
+        alignItems={"center"}
+      >
+        <Text
+          fontSize={18}
+          fontWeight={300}
+          fontFamily={FONTS.body}
+          display={["none", "block"]}
+        >
+          EMPLOYED BY &nbsp;&nbsp; &gt;
+        </Text>
         {CREDIBILITY_LINKS?.map((link) => (
-          <Link key={link?.href} href={link?.href} target="_blank">
-            <Image
-              src={link?.imagePath}
-              alt={link?.name}
-              width={link?.dimensions?.width ?? 100}
-              height={link?.dimensions?.height ?? 50}
-              loading={"lazy"}
-            />
-          </Link>
+          <GraphicLink key={link?.href} graphic={link} target="_blank" />
         ))}
       </HStack>
       <HStack
         color={"brand.light"}
+        alignItems={"flex-start"}
         justify={"space-around"}
         rounded={"md"}
         fontFamily={FONTS.body}
@@ -51,29 +60,34 @@ const About = () => {
               ME
             </Text>
           </Heading>
-          <Text
-            w={"100%"}
-            textAlign={"justify"}
-            fontWeight={400}
-          >
-            I&apos;m Raza Haider, a Software Engineer specializing in React.js, Next.js, Express.js, and MySQL. I
-            build <Text color={"brand.primary"} as={"span"}>fast, scalable, and maintainable web applications</Text>.
+          <Text w={"100%"} textAlign={"justify"} fontWeight={400}>
+            I&apos;m Raza Haider, a Software Engineer specializing in React.js,
+            Next.js, Express.js, and MySQL. I build{" "}
+            <Text color={"brand.primary"} as={"span"}>
+              fast, scalable, and maintainable web applications
+            </Text>
+            .
             <br />
             <br />
             At{" "}
             <Text color={"brand.primary"} as={"span"}>
               Jazz
             </Text>
-            , I direct the end-to-end development of the Jazz Point Back Office and
-            deliver backend services for{" "}
+            , I engineered a Backend-for-Frontend for{" "}
+            <Text color={"brand.primary"} as={"span"}>
+              SIMOSA
+            </Text>{" "}
+            dashboard reducing median payload size by 45%, improving UX for 20M+
+            users. Also, I directed the end-to-end development of the Jazz Point
+            Back Office and deliver backend services for{" "}
             <Text color={"brand.primary"} as={"span"}>
               Jazz Point
             </Text>
-            , an application with 10K+ downloads on Google Play. I have implemented
-            comprehensive unit and integration tests on Jazz Point, achieving 92.64% branch coverage,
-            and introduced reusable component architecture with AI-augmented workflows,
-            reducing development time by 58%. 
-            Previously at{" "}
+            , an application with 10K+ downloads on Google Play. Furthermore, I
+            implemented comprehensive unit and integration tests on Jazz Point,
+            achieving 92.64% branch coverage, and introduced reusable component
+            architecture with AI-augmented workflows, reducing development time
+            by 58%. Previously at{" "}
             <Text color={"brand.primary"} as={"span"}>
               Dubizzle Group
             </Text>
@@ -81,49 +95,65 @@ const About = () => {
             e-commerce platform by leading the development of key features for{" "}
             <Text color={"brand.primary"} as={"span"}>
               OLX Seller Center
-            </Text> and improving its initial page load performance by 35%.
-            <br /><br /> I hold a BS in Computer
-            Science from{" "}
+            </Text>{" "}
+            and improving its initial page load performance by 35%.
+            <br />
+            <br /> I hold a BS in Computer Science from{" "}
             <Text color={"brand.primary"} as={"span"}>
               FAST
             </Text>
-            , graduating with a 3.64 CGPA and multiple Dean&apos;s Honor List awards.
+            , graduating with a 3.64 CGPA and multiple Dean&apos;s Honor List
+            awards.
           </Text>
           <TechList list={TECH_STACK} />
         </VStack>
-        <VStack justifyContent={"center"} position={"relative"} w={"40%"}>
-          <VStack
-            w={[300, 370]}
-            h={300}
-            bg={"transparent"}
-            overflow={"hidden"}
-            justify={"center"}
-            rounded={"md"}
-            border={"1.5px solid"}
-            borderColor={"brand.primary"}
-            boxShadow={[
-              "none",
-              "rgba(78, 245, 231, 0.4) 5px 5px, rgba(78, 245, 231, 0.3) 10px 10px, rgba(78, 245, 231, 0.2) 15px 15px, rgba(78, 245, 231, 0.1) 20px 20px, rgba(78, 245, 231, 0.05) 25px 25px",
-            ]}
-            position={'relative'}
-          >
-            <Image
-              alt={"Raza Haider Profile Picture"}
-              src={"/images/profile-pic.webp"}
-              width={2459}
-              height={2665}
-              loading={"lazy"}
-              sizes="(min-width: 480px) 367px, 297px"
-            />
+        <VStack
+          justifyContent={"space-evenly"}
+          position={"relative"}
+          w={"40%"}
+          alignItems={"center"}
+          gapY={6}
+          height={700}
+        >
+          <div
+            className="badge-base LI-profile-badge"
+            data-locale="en_US"
+            data-size="large"
+            data-theme="light"
+            data-type="HORIZONTAL"
+            data-vanity="razah1214"
+            data-version="v1"
+          />
+          <VStack alignItems={"center"} gap={8}>
+            <Text
+              fontSize={18}
+              fontWeight={300}
+              fontFamily={FONTS.body}
+              display={["none", "block"]}
+            >
+              WORKING AT
+            </Text>
+            <GraphicLink graphic={GOSAAS_LINK} target="_blank" />
           </VStack>
         </VStack>
       </HStack>
-      <HStack width={"100%"} justify={["center", "space-evenly"]} flexWrap={"wrap"} gapX={[20, 4]} alignItems={"center"}>
-        <Text fontSize={18} fontWeight={300} fontFamily={FONTS.body} display={["none", "block"]}>WORKED ON &nbsp;&nbsp; &gt;</Text>
+      <HStack
+        width={"100%"}
+        justify={["center", "space-evenly"]}
+        flexWrap={"wrap"}
+        gapX={[20, 4]}
+        alignItems={"center"}
+      >
+        <Text
+          fontSize={18}
+          fontWeight={300}
+          fontFamily={FONTS.body}
+          display={["none", "block"]}
+        >
+          WORKED ON &nbsp;&nbsp; &gt;
+        </Text>
         {PROJECT_LINKS?.map((link) => (
-          <Link key={link?.href} href={link?.href} target="_blank">
-            <Image src={link?.imagePath} alt={link?.name} width={link?.dimensions?.width ?? 100} height={link?.dimensions?.height ?? 50} loading={"lazy"} />
-          </Link>
+          <GraphicLink key={link?.href} graphic={link} target="_blank" />
         ))}
       </HStack>
     </VStack>
