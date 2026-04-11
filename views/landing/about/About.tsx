@@ -8,6 +8,7 @@ import {
 } from "@/views/landing/constants";
 import { repeat } from "@/utils";
 import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -112,24 +113,35 @@ const About = () => {
           position={"relative"}
           w={["100%", "100%", "100%", "40%"]}
           alignItems={"center"}
-          gapY={6}
+          gapY={20}
           height={[500, 500, 500, 700]}
         >
-          <div
-            className="badge-base LI-profile-badge"
-            data-locale="en_US"
-            data-size="large"
-            data-theme="light"
-            data-type="HORIZONTAL"
-            data-vanity="razah1214"
-            data-version="v1"
-          />
-          <VStack alignItems={"center"} gap={4} w={'100%'}>
-            <Text
-              fontSize={18}
-              fontWeight={300}
-              fontFamily={FONTS.body}
-            >
+          <VStack
+            w={300}
+            h={300}
+            bg={"transparent"}
+            overflow={"hidden"}
+            justify={"center"}
+            rounded={"md"}
+            border={"1.5px solid"}
+            borderColor={"brand.primary"}
+            boxShadow={[
+              "none",
+              "rgba(78, 245, 231, 0.4) 5px 5px, rgba(78, 245, 231, 0.3) 10px 10px, rgba(78, 245, 231, 0.2) 15px 15px, rgba(78, 245, 231, 0.1) 20px 20px, rgba(78, 245, 231, 0.05) 25px 25px",
+            ]}
+            position={"relative"}
+          >
+            <Image
+              alt={"Raza Haider Profile Picture"}
+              src={"/images/profile-pic.webp"}
+              width={2200}
+              height={2200}
+              loading={"lazy"}
+              sizes="(min-width: 480px) 367px, 297px"
+            />
+          </VStack>
+          <VStack alignItems={"center"} gap={4} w={"100%"}>
+            <Text fontSize={18} fontWeight={300} fontFamily={FONTS.body}>
               WORKING AT
             </Text>
             <GraphicLink graphic={GOSAAS_LINK} target="_blank" />
